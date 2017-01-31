@@ -1,0 +1,59 @@
+/*
+Buttons based on social buttons found at
+https://www.sanwebe.com/2014/02/css3-buttons-examples-with-effects-animations
+*/
+button {
+  width:100px;
+  height:100px;
+  display:inline-block;
+  font-family:Arial, "Helvetica", sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  color:#fff;
+  text-decoration:none;
+  text-transform:uppercase;
+  text-align:center;
+  text-shadow:1px 1px 0px #07526e;
+  padding-top:6px;
+  margin-left:auto;
+  margin-right:auto;
+  left:30px;
+  position:relative;
+  cursor:pointer;
+  border: none;
+  background: #109bce;
+  background-image: linear-gradient(bottom, rgb(14,137,182) 0%, rgb(22,179,236) 100%);
+  border-radius: 5px;
+  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #07526e, 0px 10px 5px #999;
+}
+
+button:active {
+  top:3px;
+  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #07526e, 0px 5px 3px #999;
+}
+
+.forward:before {
+  content:"FORWARD";
+}
+.right:before {
+  content:"RIGHT";
+}
+.left:before {
+  content:"LEFT";
+}
+.reverse:before {
+  content:"REVERSE";
+}
+.forward_right:before {
+  content:"FORWARD\aRIGHT";
+}
+.forward_left:before {
+  content:"FORWARD\aLEFT";
+}
+.reverse_right:before {
+  content:"REVERSE\aRIGHT";
+}
+.reverse_left:before {
+  content:"REVERSE\aLEFT";
+}
+

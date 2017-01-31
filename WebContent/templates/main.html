@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="../css/controls.css"></link>
+  <script type="text/javascript" src="../js/controller.js"></script>
+  <title>Bot</title>
+</head>
+<body>
+  <div class="keypad">
+    <table>
+	  <tr>
+	    <td><button class="forward_left" onclick="botcmd(cmdEnum.FWD_LF)"/></td>
+	    <td><button class="forward" onclick="botcmd(cmdEnum.FWD)" /></td>
+	    <td><button class="forward_right" onclick="botcmd(cmdEnum.FWD_RT)" /></td>
+	  </tr>
+	  <tr>
+	    <td><button class="left" onclick="botcmd(cmdEnum.LF)" /></td>
+		<td></td>
+		<td><button class="right" onclick="botcmd(cmdEnum.RT)" /></td>
+	  </tr>
+	  <tr>
+	    <td><button class="reverse_left" onclick="botcmd(cmdEnum.REV_LF)" /></td>
+	    <td><button class="reverse" onclick="botcmd(cmdEnum.REV)" /></td>
+		<td><button class="reverse_right" onclick="botcmd(cmdEnum.REV_RT)" /></td>
+	  </tr>
+	</table>
+  <div>
+</body>
+</html>

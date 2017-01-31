@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="BotControl" default="default" basedir=".">
+  <property file="build.properties"/>
+
+  <target name="default" description="Deploy WebContent and restart Flask" depends="deploy,restart">
+  </target>
+	
+  <target name="deploy" description="Copy to Raspberry Pi">
+    <echo>Copying ${basedir}/WebContent to ${remote.user}@${remote.host}:${remote.webdir}</echo>
+  	<exec executable="scp">
+  		<arg value="-r" />
+  		<arg value="${basedir}/WebContent" />
+  		<arg value="${remote.user}@${remote.host}:${remote.webdir}" />
+  	</exec>
+  </target>
+	
+  <target name="restart" description="Restart the Flask server">
+  	<echo>Restarting Flask server</echo>
+  	<exec executable="ssh" spawn="true">
+  		<arg value="${remote.user}@${remote.host}" />
+  		<arg value="bin/startFlask" />
+  	</exec>
+  </target>
+  
+</project>
