@@ -10,7 +10,7 @@
   	<exec executable="scp">
   		<arg value="-r" />
   		<arg value="${basedir}/WebContent" />
-  		<arg value="${remote.user}@${remote.host}:${remote.webdir}" />
+  		<arg value="${remote.user}@${remote.host}:." />
   	</exec>
   </target>
 	

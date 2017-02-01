@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" type="text/css" href="../css/controls.css"></link>
-  <script type="text/javascript" src="../js/controller.js"></script>
+  <link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.ico') }}" type="image/x-icon"></link>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/controls.css') }}"></link>
   <title>Bot</title>
 </head>
 <body>
@@ -26,5 +26,7 @@
 	  </tr>
 	</table>
   <div>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery-3.1.1.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/controller.js') }}"></script>
 </body>
 </html>
