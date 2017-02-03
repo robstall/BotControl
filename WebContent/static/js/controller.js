@@ -11,8 +11,21 @@ var cmdEnum = {
 
 function botcmd(cmd) {
 	console.log(cmd);
+	var spdL = 0;
+	var spdR = 0;
+	switch(cmd) {
+		case cmdEnum.FWD:
+			spdL = 1;
+			spdR = 1;
+			break;
+		default:
+			break;
+	}
+	
     $.ajax({
     	url: '/servo',
+    	data: { spdL : spdL, spdR : spdR },
+    	dataType: "json",
         type: 'POST',
         success: function(response) {
         	console.log(response);

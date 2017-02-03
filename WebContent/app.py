@@ -10,8 +10,11 @@ def index():
     
 @app.route('/servo', methods=['POST'])
 def servo():
-    bot.drive(1, 1)
-    return json.dumps({'status':'OK'});
+    #spdL = request.form['spdL']
+    spdR = 1 #request.form['spdR']
+    #request.get_json(force=True)
+    return json.dumps({'status':'OK','spdR':spdR})
 
 if __name__ == '__main__':
+    bot.setup()
     app.run(debug=True, host='0.0.0.0')
