@@ -9,6 +9,23 @@ var cmdEnum = {
 	REV_LF: "reverse_left"
 };
 
+$(document).ready(function() {
+    $(".button").mousedown(function(){
+    	var id = $(this).attr('id');
+        console.log("mousedown: " + id);
+        return false;
+    });
+});
+
+$(document).ready(function() {
+    $(".button").mouseup(function(){
+    	var id = $(this).attr('id');
+        console.log("mouseup: " + id);
+        botcmd(cmdEnum.FWD);
+        return false;
+    });
+});
+
 function botcmd(cmd) {
 	console.log(cmd);
 	var spdL = 0;

@@ -31,29 +31,3 @@ button:active {
   top:3px;
   box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #07526e, 0px 5px 3px #999;
 }
-
-.forward:before {
-  content:"FORWARD";
-}
-.right:before {
-  content:"RIGHT";
-}
-.left:before {
-  content:"LEFT";
-}
-.reverse:before {
-  content:"REVERSE";
-}
-.forward_right:before {
-  content:"FORWARD\aRIGHT";
-}
-.forward_left:before {
-  content:"FORWARD\aLEFT";
-}
-.reverse_right:before {
-  content:"REVERSE\aRIGHT";
-}
-.reverse_left:before {
-  content:"REVERSE\aLEFT";
-}
-
