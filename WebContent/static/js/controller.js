@@ -10,15 +10,15 @@ var cmdEnum = {
 };
 
 $(document).ready(function() {
-    $(".button").mousedown(function(){
+    // btn_mv down
+    $(".btn_mv").mousedown(function(){
     	var id = $(this).attr('id');
         console.log("mousedown: " + id);
         return false;
     });
-});
 
-$(document).ready(function() {
-    $(".button").mouseup(function(){
+	// btn_mv up
+    $(".btn_mv").mouseup(function(){
     	var id = $(this).attr('id');
         console.log("mouseup: " + id);
         botcmd(cmdEnum.FWD);
@@ -39,11 +39,12 @@ function botcmd(cmd) {
 			break;
 	}
 	
+	var data={'desc':'item', 'status':'status'};
     $.ajax({
+    	type: 'POST',
     	url: '/servo',
-    	data: { spdL : spdL, spdR : spdR },
-    	dataType: "json",
-        type: 'POST',
+    	data: JSON.stringify(data, null, '\t'),
+     	contentType: 'application/json;charset=UTF-8',
         success: function(response) {
         	console.log(response);
         },

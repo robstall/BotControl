@@ -2,7 +2,7 @@
 Buttons based on social buttons found at
 https://www.sanwebe.com/2014/02/css3-buttons-examples-with-effects-animations
 */
-button {
+.btn_mv {
   width:100px;
   height:100px;
   display:inline-block;
@@ -27,7 +27,7 @@ button {
   box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #07526e, 0px 10px 5px #999;
 }
 
-button:active {
+.btn_mv:active {
   top:3px;
   box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #07526e, 0px 5px 3px #999;
 }
