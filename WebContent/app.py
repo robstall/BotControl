@@ -10,10 +10,9 @@ def index():
     
 @app.route('/servo', methods=['POST'])
 def servo():
-    #print "content_type: ", request.content_type
-    #print "request.json: ", request.json
-    desc = request.json['desc']
-    return json.dumps({'status':'OK', 'desc':desc})
+    lspd = request.json['lspd']
+    rspd = request.json['rspd']
+    return json.dumps({'status':'OK','lspd':lspd,'rspd':rspd})
 
 if __name__ == '__main__':
     bot.setup()
