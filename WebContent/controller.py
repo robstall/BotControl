@@ -10,20 +10,15 @@ class SpyBot:
     RSRV_PIN = 16
     LSRV_PIN = 18
 
-    # direction
-    FWD = 0
-    STOP = 1
-    REV = 2
-
     def __init__(self):
         GPIO.setmode(GPIO.BOARD)
-        self.rsrv = ServoLib.Servo(SpyBot.RSRV_PIN, 20, [1.3, 1.5, 1.7])
-        self.lsrv = ServoLib.Servo(SpyBot.LSRV_PIN, 20, [1.7, 1.5, 1.3])
+        self.rsrv = ServoLib.CRServo(SpyBot.RSRV_PIN)
+        self.lsrv = ServoLib.CRServo(SpyBot.LSRV_PIN, reversed=True)
         
     def shutdown(self):
         print 'shutdown'
-        self.rsrv.stop()
-        self.lsrv.stop()
+        self.rsrv.speed(0)
+        self.lsrv.speed(0)
         time.sleep(0.5)
         GPIO.cleanup()
         
@@ -31,7 +26,8 @@ class SpyBot:
         print 'test'
         
     def move(self, speedLeft, speedRight):
-        
+        self.lsrv.speed(speedLeft)
+        self.rsrv.speed(speedRight)       
         
 if __name__ == "__main__":
     while True:
