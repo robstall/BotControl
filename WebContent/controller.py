@@ -1,26 +1,41 @@
+#!/usr/bin/env python
+
 import RPi.GPIO as GPIO
-import time
+import time 
+import ServoLib
 
-# Run the drive motors at the passed speeds where 1 is full forward, 0 is stopped,
-# -1 is full reverse and values in between are slower.
-def drive(speedLeft, speedRight):
-    print("drive")
-    if speedLeft != 0:
-        GPIO.output(11,GPIO.HIGH)
-    if speedRight != 0:
-        GPIO.output(13, GPIO.HIGH)
-    time.sleep(1)
-    GPIO.output(11,GPIO.LOW)
-    GPIO.output(13,GPIO.LOW)
+class SpyBot:
+    
+    # pins
+    RSRV_PIN = 16
+    LSRV_PIN = 18
 
-def setup():
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setwarnings(False)
-    GPIO.setup(11,GPIO.OUT)
-    GPIO.setup(13,GPIO.OUT)
+    # direction
+    FWD = 0
+    STOP = 1
+    REV = 2
 
-def test():
-    print("testing")
-
-if __name__ == '__main__':
-    test()
+    def __init__(self):
+        GPIO.setmode(GPIO.BOARD)
+        self.rsrv = ServoLib.Servo(SpyBot.RSRV_PIN, 20, [1.3, 1.5, 1.7])
+        self.lsrv = ServoLib.Servo(SpyBot.LSRV_PIN, 20, [1.7, 1.5, 1.3])
+        
+    def shutdown(self):
+        print 'shutdown'
+        self.rsrv.stop()
+        self.lsrv.stop()
+        time.sleep(0.5)
+        GPIO.cleanup()
+        
+    def test(self):
+        print 'test'
+        
+    def move(self, speedLeft, speedRight):
+        
+        
+if __name__ == "__main__":
+    while True:
+        bot = SpyBot() 
+        bot.test()
+        bot.shutdown()
+        break

@@ -1,14 +1,3 @@
-var cmdEnum = {
-	FWD : "forward",
-	FWD_RT : "forward_right",
-	FWD_LF : "forward_left",
-	RT: "right",
-	LF: "left",
-	REV: "reverse",
-	REV_RT: "reverse_right",
-	REV_LF: "reverse_left"
-};
-
 $(document).ready(function() {
     // btn_mv down
     $(".btn_mv").mousedown(function(){

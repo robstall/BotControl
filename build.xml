@@ -21,5 +21,13 @@
   		<arg value="bin/startFlask" />
   	</exec>
   </target>
+	
+  <target name="test spybot" description="Run the SpyBot class">
+  	<echo>Running SpyBot</echo>
+  	<exec executable="ssh" spawn="true">
+  		<arg value="${remote.user}@${remote.host}" />
+  	  	<arg value="${remote.webdir}/SpyBot.py" />
+  	</exec>
+  </target>
   
 </project>

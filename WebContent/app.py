@@ -1,8 +1,12 @@
+#!/usr/bin/env python
+
 import json
-import controller as bot
 from flask import Flask, render_template, jsonify, request
 
+from controller import SpyBot
+
 app = Flask(__name__)
+#bot = SpyBot.SpyBot()
 
 @app.route('/')
 def index():
@@ -15,5 +19,4 @@ def servo():
     return json.dumps({'status':'OK','lspd':lspd,'rspd':rspd})
 
 if __name__ == '__main__':
-    bot.setup()
     app.run(debug=True, host='0.0.0.0')
