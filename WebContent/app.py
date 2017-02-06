@@ -1,12 +1,16 @@
 #!/usr/bin/env python
 
+import logging
 import json
 from flask import Flask, render_template, jsonify, request
 
 from controller import SpyBot
 
+LOG_FILENAME = '/tmp/app.log'
+logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
+
 app = Flask(__name__)
-#bot = SpyBot.SpyBot()
+bot = SpyBot()
 
 @app.route('/')
 def index():
@@ -16,6 +20,7 @@ def index():
 def servo():
     lspd = request.json['lspd']
     rspd = request.json['rspd']
+    bot.move(lspd, rspd)
     return json.dumps({'status':'OK','lspd':lspd,'rspd':rspd})
 
 if __name__ == '__main__':
